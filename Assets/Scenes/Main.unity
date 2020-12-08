@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomBorder
       objectReference: {fileID: 0}
+    - target: {fileID: 8235872258079269758, guid: 897150b3fd3bba540b18ac5c122d6373,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897150b3fd3bba540b18ac5c122d6373, type: 3}
 --- !u!1 &519420028
@@ -471,6 +476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftBorder
       objectReference: {fileID: 0}
+    - target: {fileID: 8235872258079269758, guid: 897150b3fd3bba540b18ac5c122d6373,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897150b3fd3bba540b18ac5c122d6373, type: 3}
 --- !u!1 &1436550840
@@ -613,6 +623,11 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8235872258079269758, guid: 897150b3fd3bba540b18ac5c122d6373,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897150b3fd3bba540b18ac5c122d6373, type: 3}
 --- !u!1001 &2002463577
@@ -691,6 +706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RightBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235872258079269758, guid: 897150b3fd3bba540b18ac5c122d6373,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897150b3fd3bba540b18ac5c122d6373, type: 3}

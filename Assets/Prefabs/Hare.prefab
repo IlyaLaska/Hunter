@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7077718855568991039}
   m_Layer: 0
   m_Name: Hare
-  m_TagString: Untagged
+  m_TagString: CanFallOffCliff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

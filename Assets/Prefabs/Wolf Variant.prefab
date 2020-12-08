@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 7077718855568991038, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
       propertyPath: m_Name
-      value: Wolf
+      value: Wolf Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077718855568991038, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: m_TagString
+      value: CanFallOffCliff
       objectReference: {fileID: 0}
     - target: {fileID: 7077718855568991039, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
