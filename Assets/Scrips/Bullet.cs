@@ -17,13 +17,13 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        string n = collision.name;
-        if (n == "HealthBoost" || n == "PlayerSpeedBoost" || n == "BulletSpeedBoost" || n == "BulletDamageBoost") return;
+        string tag = collision.tag;
+        if (tag == "CanFallOffCliff")
+        {
+            collision.gameObject.SetActive(false);
+            Debug.Log(collision.name + " has been shot");
+        }
         Debug.Log($"Bullet hit");
-        //Player player = collision.gameObject.GetComponent<Player>();
-        //if (player != null)
-        //{
-        //}
         StopCoroutine(deactivate);
         gameObject.SetActive(false);
     }
