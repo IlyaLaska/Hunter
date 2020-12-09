@@ -12,7 +12,7 @@ public class AvoidCliffs : AbstractBehaviour
         
         if (transform.position.x >= edgeX)
         {
-            Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
+            //Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
             return new Vector3(-maxSpeed, 0, 0);
 
         }

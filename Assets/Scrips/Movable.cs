@@ -48,7 +48,8 @@ public class Movable : MonoBehaviour
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
-            //if(behaviour.GetType().ToString() == "Wander") Debug.Log(behaviour.GetType() + " has DVM " + desiredVelocity.magnitude + " V: " + desiredVelocity);
+            if (behaviour.GetType().ToString() == "AvoidCliffs") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+            if (behaviour.GetType().ToString() == "Wander") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
             //steering += desiredVelocity - velocity;
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
@@ -57,13 +58,14 @@ public class Movable : MonoBehaviour
         //Debug.Log("Steering:" + (steering.normalized * steeringForceLimit).magnitude);
         //Debug.Log("Not: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         //Debug.Log("FinalVel: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " Mag: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
+        Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         QueueForce(Vector3.ClampMagnitude(steering - velocity, steeringForceLimit));
     }
     void ApplyQueuedForces()
     {
         velocity += acceleration * Time.fixedDeltaTime;
         velocity = Vector3.ClampMagnitude(velocity, velocityLimit);
-
+        Debug.Log("Velocity To Add: " + "V: " + velocity + "VM: " + velocity.magnitude);
         //on small values object might start to blink, so we considering 
         //small velocities as zeroes
         if (velocity.magnitude < Epsilon)
@@ -73,7 +75,6 @@ public class Movable : MonoBehaviour
         }
         if (velocity.magnitude > maxV)
         {
-            //Debug.Log("Velocity To Add: " + velocity.magnitude);
             maxV = velocity.magnitude;
         }
         transform.position += velocity * Time.fixedDeltaTime;

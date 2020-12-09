@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input = input.normalized;
-        playerBody.AddForce(new Vector2(input.x * runSpeed*5, input.y * runSpeed*5));
+        playerBody.AddForce((new Vector2(input.x * runSpeed*5, input.y * runSpeed*5)));
         if(input == Vector2.zero) playerBody.AddForce(GetFrictionVelocity());
         playerBody.velocity = Vector3.ClampMagnitude(playerBody.velocity, runSpeed);
         handleAiming();
@@ -144,4 +144,3 @@ public class PlayerController : MonoBehaviour
     }
 
 }
-//Human > Doe > Wolf > Hare

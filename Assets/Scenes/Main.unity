@@ -958,7 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   objectToChase: {fileID: 1042239617}
-  chaseDistance: 0
+  chaseDistance: 10
 --- !u!114 &1856147654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,9 +971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf66ba6e8ef8f4aad6a804d77621aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 0
   objectToFlee: {fileID: 1042239617}
-  fleeDistance: 10
+  fleeDistance: 0
 --- !u!114 &1856147655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a111deffdf6dfa4ab9235338e859d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 10
+  weight: 50
 --- !u!114 &1856147656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: velocityLimit
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 250890822170352261, guid: e7638a2ea52d4ad4f962baf54623823f,
+        type: 3}
+      propertyPath: steeringForceLimit
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 958871309024340573, guid: e7638a2ea52d4ad4f962baf54623823f,
         type: 3}

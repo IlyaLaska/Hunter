@@ -33,7 +33,7 @@ public class Wander : AbstractBehaviour
         //Debug.Log("futurePos: " + futurePos + " v: " + futurePos.magnitude);
         Vector3 vector = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * circleRadius;
         //Debug.Log("vector: " + vector + " v: " + vector.magnitude);
-
+        //Debug.Log("W:" + (futurePos + vector - transform.position).normalized.magnitude * movable.VelocityLimit);
         return (futurePos + vector - transform.position).normalized * movable.VelocityLimit;
     }
 }
