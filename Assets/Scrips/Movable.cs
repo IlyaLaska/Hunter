@@ -104,6 +104,5 @@ public class Movable : MonoBehaviour
     {
         acceleration += (force/mass);
         Debug.DrawLine(transform.position, transform.position + acceleration, Color.white);
-
     }
 }
