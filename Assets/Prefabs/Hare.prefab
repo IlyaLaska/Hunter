@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5989017691685210443}
   - component: {fileID: 6605649436439999991}
   - component: {fileID: 6169426356693681455}
+  - component: {fileID: 418631809909055830}
   m_Layer: 0
   m_Name: Hare
   m_TagString: CanFallOffCliff
@@ -163,3 +164,16 @@ MonoBehaviour:
   objectToFlee: {fileID: 1087430193795072061, guid: d29d3f8bf5c03904a9eda402dc7016bc,
     type: 3}
   fleeDistance: 0
+--- !u!114 &418631809909055830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077718855568991038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c28bb25c88af73458ca965229486812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0

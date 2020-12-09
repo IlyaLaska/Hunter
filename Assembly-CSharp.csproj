@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{868EA822-CA13-815A-0AF9-D0096AB7D916}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -65,13 +64,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrips\Animals\Animal.cs" />
+    <Compile Include="Assets\Scrips\Animals\Does\Doe\Doe.cs" />
+    <Compile Include="Assets\Scrips\Animals\Hares\Hare\Hare.cs" />
+    <Compile Include="Assets\Scrips\Animals\Wolves\Wolf\Wolf.cs" />
     <Compile Include="Assets\Scrips\Behaviours\AbstractBehaviour.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Align.cs" />
     <Compile Include="Assets\Scrips\Behaviours\AvoidCliffs.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Chase.cs" />
     <Compile Include="Assets\Scrips\Behaviours\ChaseSmart.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Cohesion.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Flee.cs" />
     <Compile Include="Assets\Scrips\Behaviours\FleeSmart.cs" />
     <Compile Include="Assets\Scrips\Behaviours\HerdShepherd.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Separation.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Wander.cs" />
     <Compile Include="Assets\Scrips\Bullet.cs" />
     <Compile Include="Assets\Scrips\Cliff.cs" />
@@ -710,8 +716,7 @@
       <HintPath>D:/Programming/Code/C#/Hunter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
