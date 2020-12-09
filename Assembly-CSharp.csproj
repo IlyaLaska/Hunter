@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scrips\Behaviours\Chase.cs" />
     <Compile Include="Assets\Scrips\Behaviours\ChaseSmart.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Flee.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\FleeSmart.cs" />
     <Compile Include="Assets\Scrips\Behaviours\HerdShepherd.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Wander.cs" />
     <Compile Include="Assets\Scrips\Bullet.cs" />

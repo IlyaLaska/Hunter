@@ -1017,7 +1017,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   objectToChase: {fileID: 1042239617}
-  chaseDistance: 20
+  chaseDistance: 0
+--- !u!114 &1856147658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856147652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07fcb2a18ab00042b70a3c4aabe44e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  objectToFlee: {fileID: 1042239617}
+  fleeDistance: 20
 --- !u!1001 &2002463577
 PrefabInstance:
   m_ObjectHideFlags: 0
