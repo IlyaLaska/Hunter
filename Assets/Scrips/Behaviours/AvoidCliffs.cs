@@ -4,7 +4,7 @@ using UnityEngine;
 public class AvoidCliffs : AbstractBehaviour
 {
     private float edgeX = 40f;
-    private float edgeY = 18f;
+    private float edgeY = 19f;
 
     public override Vector3 GetDesiredVelocity()
     {

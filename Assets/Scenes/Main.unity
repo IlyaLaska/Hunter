@@ -788,6 +788,14 @@ MonoBehaviour:
   myPlayerPrefab: {fileID: 1087430193795072035, guid: d29d3f8bf5c03904a9eda402dc7016bc,
     type: 3}
   bulletPool: {fileID: 1436550842}
+  hare: {fileID: 7077718855568991038, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
+  wolf: {fileID: 4245125579941825612, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
+  doe: {fileID: 7772857962988161598, guid: caa533ba2fc86a74092c5a23f2e60af7, type: 3}
+  hareAmount: 5
+  wolfAmount: 3
+  doeGroupAmount: 2
+  doeInGroupMinAmount: 2
+  doeInGroupMaxAmount: 6
 --- !u!1001 &1730409225
 PrefabInstance:
   m_ObjectHideFlags: 0

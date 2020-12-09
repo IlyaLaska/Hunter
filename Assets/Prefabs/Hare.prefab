@@ -137,14 +137,20 @@ MonoBehaviour:
   objectToFlee: {fileID: 1087430193795072061, guid: d29d3f8bf5c03904a9eda402dc7016bc,
     type: 3}
   fleeDistance: 0
+<<<<<<< HEAD
 --- !u!58 &3690230259618722351
 CircleCollider2D:
+=======
+--- !u!114 &418631809909055830
+MonoBehaviour:
+>>>>>>> be1d9375306ece6886e0c09a9d8095999ddf512c
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7077718855568991038}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -153,3 +159,10 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c28bb25c88af73458ca965229486812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+>>>>>>> be1d9375306ece6886e0c09a9d8095999ddf512c
