@@ -47,10 +47,25 @@ public class Movable : MonoBehaviour
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
-            Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.white);
 
-            if (behaviour.GetType().ToString() == "AvoidCliffs") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
-            if (behaviour.GetType().ToString() == "Wander") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+            if (behaviour.GetType().ToString() == "AvoidCliffs") { 
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.black);
+            }
+            if (behaviour.GetType().ToString() == "Wander") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.cyan);
+            }
+            if (behaviour.GetType().ToString() == "ChaseSmart") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.green);
+            }
+            if (behaviour.GetType().ToString() == "Chase") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.red);
+            }
+
+            
             //steering += desiredVelocity - velocity;
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
