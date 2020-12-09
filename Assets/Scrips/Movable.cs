@@ -103,5 +103,7 @@ public class Movable : MonoBehaviour
     public void QueueForce(Vector3 force)
     {
         acceleration += (force/mass);
+        Debug.DrawLine(transform.position, transform.position + acceleration, Color.white);
+
     }
 }
