@@ -1041,22 +1041,6 @@ MonoBehaviour:
   weight: 1
   objectToFlee: {fileID: 1042239617}
   fleeDistance: 20
---- !u!58 &1856147659
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856147652}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.5
 --- !u!1001 &2002463577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1252,11 +1236,6 @@ PrefabInstance:
       propertyPath: steeringForceLimit
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 850598866556298809, guid: e7638a2ea52d4ad4f962baf54623823f,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 958871309024340573, guid: e7638a2ea52d4ad4f962baf54623823f,
         type: 3}
       propertyPath: objectToFlee
@@ -1334,7 +1313,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 958871309024340573, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
-    - {fileID: 850598866556298809, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
 --- !u!1001 &7077718856324780164
 PrefabInstance:
