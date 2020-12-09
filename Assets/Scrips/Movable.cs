@@ -28,7 +28,6 @@ public class Movable : MonoBehaviour
         behaviours = GetComponents<AbstractBehaviour>();
     }
 
-
     private void FixedUpdate()
     {
         QueueFriction();
@@ -48,6 +47,8 @@ public class Movable : MonoBehaviour
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
+            Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.white);
+
             if (behaviour.GetType().ToString() == "AvoidCliffs") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
             if (behaviour.GetType().ToString() == "Wander") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
             //steering += desiredVelocity - velocity;

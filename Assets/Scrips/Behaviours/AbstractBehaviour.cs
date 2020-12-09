@@ -11,7 +11,7 @@ public abstract class AbstractBehaviour : MonoBehaviour
 
     protected Movable movable;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         movable = GetComponent<Movable>();
         //Debug.Log(gameObject.name + " has movable " + movable.gameObject.name);
