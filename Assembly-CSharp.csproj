@@ -64,9 +64,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrips\Behaviours\AbstractBehaviour.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\AvoidCliffs.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Chase.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Flee.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\HerdShepherd.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\Wander.cs" />
     <Compile Include="Assets\Scrips\Bullet.cs" />
     <Compile Include="Assets\Scrips\Cliff.cs" />
     <Compile Include="Assets\Scrips\GM.cs" />
+    <Compile Include="Assets\Scrips\Movable.cs" />
     <Compile Include="Assets\Scrips\ObjectPool.cs" />
     <Compile Include="Assets\Scrips\PlayerController.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

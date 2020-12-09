@@ -15,13 +15,27 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
 
-    public float runSpeed = 20.0f;
+    [SerializeField]
+    private float runSpeedInput = 5.0f;
+    [SerializeField]
+    private float frictionCoef = 500f;
+    private float runSpeed => runSpeedInput;
     public float bulletSpeedMultiplier = 1;
     public const int multiplierDuration = 30000;
+
+    //firing & magazine
+    bool canFire = true;
+    [SerializeField]
+    private int magCapacity = 6;
+    public int magContents = 6;
 
     void Awake()
     {
         playerBody = player.GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
+        ChangeMagazineState(magCapacity);
     }
 
     // Update is called once per frame
@@ -35,14 +49,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnGUI()
     {
-        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.Space.ToString())))//pressed Space
+        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.R.ToString())))//pressed r
         {
-
+            StartCoroutine(DealyedFuncRoutine(1.2f, ReloadMagaine));
         }
     }
     private void handleShooting()
     {
-        if (Input.GetMouseButtonDown(0))//shooting
+        if (Input.GetMouseButtonDown(0) && canFire && magContents > 0)//shooting
         {
             GameObject bullet = GM.bulletPoolInstance.GetObject();
             Vector3 shotPos = (muzzle.transform.position - player.transform.position).normalized;
@@ -51,6 +65,9 @@ public class PlayerController : MonoBehaviour
             Vector2 velocity = new Vector2(shotPos.x * 20, shotPos.y * 20) * bulletSpeedMultiplier;
             bullet.GetComponent<Rigidbody2D>().velocity = velocity;
             bullet.GetComponent<Bullet>().Deactivate(10);//TODO IMPROVE
+            ChangeMagazineState(magContents - 1);
+            canFire = false;
+            StartCoroutine(DealyedFuncRoutine(0.7f, EnableFiring));
         }
     }
 
@@ -60,12 +77,18 @@ public class PlayerController : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input = input.normalized;
-        playerBody.velocity = new Vector2(input.x * runSpeed, input.y * runSpeed);
-
+        playerBody.AddForce(new Vector2(input.x * runSpeed, input.y * runSpeed));
+        if(input == Vector2.zero) playerBody.AddForce(GetFrictionVelocity());
+        playerBody.velocity = Vector3.ClampMagnitude(playerBody.velocity, runSpeed);
         handleAiming();
         //(bool, float) aim = getAim();
     }
-
+    private Vector3 GetFrictionVelocity()
+    {
+        Vector3 frictionForce = -playerBody.velocity.normalized * frictionCoef;
+        var frictionVelChange = frictionForce / playerBody.mass;// * Time.fixedDeltaTime;
+        return frictionVelChange;
+    }
     private (bool, float) getAim()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -101,5 +124,24 @@ public class PlayerController : MonoBehaviour
         aim.transform.eulerAngles = new Vector3(0, 0, angle);
 
     }
+    private IEnumerator DealyedFuncRoutine(float activateIn, Action fun)
+    {
+        yield return new WaitForSeconds(activateIn);
+        fun();
+    }
+    private void EnableFiring()
+    {
+        canFire = true;
+    }
+    private void ReloadMagaine()
+    {
+        ChangeMagazineState(magCapacity);
+    }
+    private void ChangeMagazineState(int setMagContentsTo)
+    {
+        magContents = setMagContentsTo;
+        GM.instance.magIndicator.text = magContents.ToString();
+    }
 
 }
+//Human > Doe > Wolf > Hare

@@ -9,7 +9,7 @@ public class GM : MonoBehaviour
     bool escPressed = false;
 
     public static GM instance;
-
+    public TMPro.TextMeshProUGUI magIndicator;
 
     public GameObject myPlayerPrefab;
     //public List<GameObject> players;
@@ -18,7 +18,7 @@ public class GM : MonoBehaviour
     public ObjectPool bulletPool;
     public static ObjectPool bulletPoolInstance;
 
-    void Start()
+    void Awake()
     {
         bulletPoolInstance = bulletPool;
         if (instance == null)

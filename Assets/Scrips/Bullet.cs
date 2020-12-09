@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.SetActive(false);
             Debug.Log(collision.name + " has been shot");
         }
-        Debug.Log($"Bullet hit");
+        //Debug.Log($"Bullet hit");
         StopCoroutine(deactivate);
         gameObject.SetActive(false);
     }
