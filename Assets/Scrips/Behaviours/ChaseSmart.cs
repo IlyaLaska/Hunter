@@ -11,6 +11,7 @@ public class ChaseSmart : AbstractBehaviour
     private int chaseDistance;
     private void Start()
     {
+        base.Start();
         objectBody = objectToChase.GetComponent<Rigidbody2D>();
     }
 
