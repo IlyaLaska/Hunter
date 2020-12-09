@@ -78,6 +78,7 @@ public class Movable : MonoBehaviour
         }
         transform.position += velocity * Time.fixedDeltaTime;
         acceleration = Vector3.zero;
+
         float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         //transform.rotation = Quaternion.LookRotation(velocity);

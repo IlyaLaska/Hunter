@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runSpeedInput = 5.0f;
     [SerializeField]
-    private float frictionCoef = 500f;
+    private float frictionCoef = 1500f;
     private float runSpeed => runSpeedInput;
     public float bulletSpeedMultiplier = 1;
     public const int multiplierDuration = 30000;
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input = input.normalized;
-        playerBody.AddForce(new Vector2(input.x * runSpeed, input.y * runSpeed));
+        playerBody.AddForce(new Vector2(input.x * runSpeed*5, input.y * runSpeed*5));
         if(input == Vector2.zero) playerBody.AddForce(GetFrictionVelocity());
         playerBody.velocity = Vector3.ClampMagnitude(playerBody.velocity, runSpeed);
         handleAiming();

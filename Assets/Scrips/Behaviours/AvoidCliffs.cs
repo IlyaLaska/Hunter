@@ -8,16 +8,11 @@ public class AvoidCliffs : AbstractBehaviour
 
     public override Vector3 GetDesiredVelocity()
     {
-        var cam = Camera.main;
         var maxSpeed = movable.VelocityLimit;
-        var v = movable.Velocity;
-        if (cam == null)
-        {
-            return Vector3.zero;
-        }
         
         if (transform.position.x >= edgeX)
         {
+            Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
             return new Vector3(-maxSpeed, 0, 0);
 
         }
