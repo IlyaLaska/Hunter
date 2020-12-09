@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   objectToChase: {fileID: 1042239617}
-  chaseDistance: 10
+  chaseDistance: 20
 --- !u!1001 &2002463577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1231,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 4245125579941825610, guid: e7638a2ea52d4ad4f962baf54623823f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.48
+      value: 17.47
       objectReference: {fileID: 0}
     - target: {fileID: 4245125579941825610, guid: e7638a2ea52d4ad4f962baf54623823f,
         type: 3}
