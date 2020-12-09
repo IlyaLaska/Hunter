@@ -958,7 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   objectToChase: {fileID: 1042239617}
-  chaseDistance: 10
+  chaseDistance: 0
 --- !u!114 &1856147654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1003,21 @@ MonoBehaviour:
   circleDistance: 1
   circleRadius: 2
   angleChangeStep: 15
+--- !u!114 &1856147657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856147652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5709070b6c1df4ea15839c20431ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  objectToChase: {fileID: 1042239617}
+  chaseDistance: 10
 --- !u!1001 &2002463577
 PrefabInstance:
   m_ObjectHideFlags: 0
