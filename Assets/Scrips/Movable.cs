@@ -28,7 +28,6 @@ public class Movable : MonoBehaviour
         behaviours = GetComponents<AbstractBehaviour>();
     }
 
-
     private void FixedUpdate()
     {
         QueueFriction();
@@ -48,8 +47,25 @@ public class Movable : MonoBehaviour
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
-            if (behaviour.GetType().ToString() == "AvoidCliffs") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
-            if (behaviour.GetType().ToString() == "Wander") Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+
+            if (behaviour.GetType().ToString() == "AvoidCliffs") { 
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.black);
+            }
+            if (behaviour.GetType().ToString() == "Wander") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.cyan);
+            }
+            if (behaviour.GetType().ToString() == "ChaseSmart") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.green);
+            }
+            if (behaviour.GetType().ToString() == "Chase") {
+                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.red);
+            }
+
+            
             //steering += desiredVelocity - velocity;
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
@@ -87,5 +103,7 @@ public class Movable : MonoBehaviour
     public void QueueForce(Vector3 force)
     {
         acceleration += (force/mass);
+        Debug.DrawLine(transform.position, transform.position + acceleration, Color.white);
+
     }
 }
