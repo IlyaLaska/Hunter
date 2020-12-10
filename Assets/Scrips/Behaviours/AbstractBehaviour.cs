@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractBehaviour : MonoBehaviour
 {
-    [SerializeField, Range(0, 10000)]
+    [SerializeField, Range(0, 20)]
     private float weight = 1f;
 
     public float Weight => weight;

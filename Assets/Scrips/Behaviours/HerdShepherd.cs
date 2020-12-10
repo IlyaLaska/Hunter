@@ -7,12 +7,16 @@ public class HerdShepherd: AbstractBehaviour
     Doe doe;
     CircleCollider2D objectBody;
     List<GameObject> groupList;
+    
+    [SerializeField, Range(1,10)]
+    private float separateWeight;
+    [SerializeField, Range(1,10)]
+    private float alignWeight;
+    [SerializeField, Range(1,10)]
+    private float cohesionWeight;
     private new void Start()
     {
         base.Start();
-        //align = new Align();
-        //separation = new Separation();
-        //cohesion = new Cohesion();
         doe = GetComponent<Doe>();
         objectBody = GetComponent<CircleCollider2D>();
         groupList = GM.instance.doeList[doe.groupId];
@@ -23,13 +27,13 @@ public class HerdShepherd: AbstractBehaviour
         Vector3 separate = Separate();
         Vector3 align = Align();
         Vector3 cohesion = Cohesion();
-        return separate + align + cohesion;
+        return separate * separateWeight + align * alignWeight + cohesion * cohesionWeight;
     }
 
     private Vector3 Separate() 
     {
         float desiredseparation = objectBody.radius * 2;
-        Vector3 sum = new Vector3(0, 0, 0);
+        Vector3 sum = Vector3.zero;
         int count = 0;
         for (int i = 0; i < groupList.Count; i++)
         {
@@ -54,7 +58,7 @@ public class HerdShepherd: AbstractBehaviour
 
     private Vector3 Align() 
     {
-        Vector2 sum = new Vector2(0, 0);
+        Vector2 sum = Vector2.zero;
 
         for (int i = 0; i < groupList.Count; i++)
         {
@@ -70,7 +74,7 @@ public class HerdShepherd: AbstractBehaviour
 
     private Vector3 Cohesion()
     {
-        Vector3 groupCenter = new Vector3(0, 0, 0);
+        Vector3 groupCenter = Vector3.zero;
 
         for (int i = 0; i < groupList.Count; i++)
         {
