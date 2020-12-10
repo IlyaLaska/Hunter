@@ -24,6 +24,7 @@ public class HerdShepherd: AbstractBehaviour
 
     public override Vector3 GetDesiredVelocity()
     {
+        if (groupList.Count <= 2) return Vector3.zero;
         Vector3 separate = Separate();
         Vector3 align = Align();
         Vector3 cohesion = Cohesion();

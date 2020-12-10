@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1
   velocityLimit: 20
-  steeringForceLimit: 80
+  steeringForceLimit: 30
 --- !u!114 &418631809909055830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a111deffdf6dfa4ab9235338e859d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 5
-  edgeX: 38
-  edgeY: 17
+  weight: 20
+  edgeX: 40
+  edgeY: 19
 --- !u!114 &1996762928331565228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,5 +258,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfa2bd7ca3617c42bc07738a2b830da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 2
   fleeDistance: 20

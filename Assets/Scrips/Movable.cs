@@ -43,31 +43,21 @@ public class Movable : MonoBehaviour
     {
         //Steering vector that shows how much you have to deviate from velocity to get DesiredVelocity
         Vector3 steering = Vector3.zero;
-        //Debug.Log("----------------------");
-        //Debug.Log("BEh len: " + behaviours.Length);
+
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
 
             behaviour.PrintLine(desiredVelocity);
-            //steering += desiredVelocity - velocity;
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
-        //Debug.Log("----------------------");
-        //QueueForce(steering.normalized * steeringForceLimit);
-        //Debug.Log("Steering:" + (steering.normalized * steeringForceLimit).magnitude);
-        //Debug.Log("Not: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
-        //Debug.Log("FinalVel: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " Mag: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
-        //Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         QueueForce(Vector3.ClampMagnitude(steering - velocity, steeringForceLimit));
     }
     void ApplyQueuedForces()
     {
         velocity += acceleration * Time.fixedDeltaTime;
         velocity = Vector3.ClampMagnitude(velocity, velocityLimit);
-        //Debug.Log("Velocity To Add: " + "V: " + velocity + "VM: " + velocity.magnitude);
-        //on small values object might start to blink, so we considering 
-        //small velocities as zeroes
+
         if (velocity.magnitude < Epsilon)
         {
             velocity = Vector3.zero;
@@ -82,7 +72,6 @@ public class Movable : MonoBehaviour
 
         float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //transform.rotation = Quaternion.LookRotation(velocity);
     }
     public void QueueForce(Vector3 force)
     {
