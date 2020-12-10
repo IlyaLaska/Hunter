@@ -11,28 +11,35 @@ public class AvoidCliffs : AbstractBehaviour
     public override Vector3 GetDesiredVelocity()
     {
         var maxSpeed = movable.VelocityLimit;
-
+        var body = GetComponent<Rigidbody2D>();
         int signX;
         int signY;
-        //if((int))
-        float rnd = Random.Range(-maxSpeed, maxSpeed);
+        if ((int)transform.position.x % 2 != 0) signX = 1;
+        else signX = -1;
+        if ((int)transform.position.y % 2 != 0) signY = 1;
+        else signY = -1;
+        float rnd = Random.Range(maxSpeed/2, maxSpeed);
         if (transform.position.x >= edgeX)
         {
             //Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
-            return new Vector3(-maxSpeed, rnd, 0).normalized * maxSpeed;
+            //body.velocity = new Vector2(0, body.velocity.y);
+            return new Vector3(-maxSpeed, rnd*signX, 0).normalized * maxSpeed*2;
         }
         if (transform.position.x <= -edgeX)
         {
             //Debug.Log("RUN");
-            return new Vector3(maxSpeed, rnd, 0).normalized * maxSpeed;
+            //body.velocity = new Vector2(0, body.velocity.y);
+            return new Vector3(maxSpeed, rnd*signX, 0).normalized * maxSpeed*2;
         }
         if (transform.position.y >= edgeY)
         {
-            return new Vector3(rnd, -maxSpeed, 0).normalized * maxSpeed;
+            //body.velocity = new Vector2(body.velocity.x, 0);
+            return new Vector3(rnd*signY, -maxSpeed, 0).normalized * maxSpeed*2;
         }
         if (transform.position.y <= -edgeY)
         {
-            return new Vector3(rnd, maxSpeed, 0).normalized * maxSpeed;
+            //body.velocity = new Vector2(body.velocity.x, 0);
+            return new Vector3(rnd*signY, maxSpeed, 0).normalized * maxSpeed*2;
         }
 
         return Vector3.zero;

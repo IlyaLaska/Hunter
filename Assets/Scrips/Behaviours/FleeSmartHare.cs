@@ -21,7 +21,7 @@ public class FleeSmartHare : AbstractBehaviour
     public override Vector3 GetDesiredVelocity()
     {
         var result = Vector3.zero;
-        Debug.Log("fleeFrom Len: " + fleeFrom.Count);
+        //Debug.Log("fleeFrom Len: " + fleeFrom.Count);
         for (int i = 0; i < fleeFrom.Count; i++)
         {
             var (objToFlee, objBody) = fleeFrom[i];
