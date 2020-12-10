@@ -37,9 +37,12 @@ public class AvoidCliffs : AbstractBehaviour
             if(safeToWander) {
                 if(transform.position.y <= -16) {
                     Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(maxSpeed, rnd, 0)}");
                     return new Vector3(maxSpeed, rnd, 0) * maxSpeed;
                 }
                 else if(transform.position.y >= 16) {
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(maxSpeed, -rnd, 0)}");
                     return new Vector3(maxSpeed, -rnd, 0) * maxSpeed;
                 }
             }
@@ -51,9 +54,15 @@ public class AvoidCliffs : AbstractBehaviour
         {
             if(safeToWander) {
                 if(transform.position.x <= -35) {
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(rnd, -maxSpeed, 0)}");
                     return new Vector3(rnd, -maxSpeed, 0) * maxSpeed;
                 }
-                else if(transform.position.x >= 35) return new Vector3(-rnd, -maxSpeed, 0) * maxSpeed;
+                else if(transform.position.x >= 35) {
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(-rnd, -maxSpeed, 0)}");
+                    return new Vector3(-rnd, -maxSpeed, 0) * maxSpeed;
+                } 
             }
             //body.velocity = new Vector2(body.velocity.x, 0);
             return new Vector3(rnd*signY, -maxSpeed, 0).normalized * maxSpeed*3;
@@ -62,10 +71,14 @@ public class AvoidCliffs : AbstractBehaviour
         {
             if(safeToWander) {
                 if(transform.position.x <= -35) {
-                    return new Vector3(rnd, -maxSpeed, 0) * maxSpeed;
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(-rnd, maxSpeed, 0)}");
+                    return new Vector3(rnd, maxSpeed, 0) * maxSpeed;
                 }
                 else if(transform.position.x >= 35) {
-                    return new Vector3(-rnd, -maxSpeed, 0) * maxSpeed;
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    Debug.Log($"Vector: {new Vector3(-rnd, maxSpeed, 0)}");
+                    return new Vector3(-rnd, maxSpeed, 0) * maxSpeed;
                 }
             }
             //body.velocity = new Vector2(body.velocity.x, 0);
