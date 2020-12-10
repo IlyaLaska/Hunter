@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 6605649436439999991, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
       propertyPath: steeringForceLimit
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7077718855568991032, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}

@@ -24,9 +24,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c86313e9112b24bae4a2adf62c273e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 2
   separateWeight: 1.5
-  alignWeight: 3
+  alignWeight: 1
   cohesionWeight: 1
 --- !u!114 &6638935057073523938
 MonoBehaviour:
@@ -64,6 +64,11 @@ PrefabInstance:
         type: 3}
       propertyPath: edgeY
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762050371943108908, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: weight
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6605649436439999991, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
