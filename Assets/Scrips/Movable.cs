@@ -48,7 +48,7 @@ public class Movable : MonoBehaviour
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
 
-            behaviour.PrintLine(desiredVelocity);
+            behaviour.PrintLine(desiredVelocity/2);
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
         // Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);

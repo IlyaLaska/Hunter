@@ -21,12 +21,12 @@ public class FleeSmartHare : AbstractBehaviour
     public override Vector3 GetDesiredVelocity()
     {
         var result = Vector3.zero;
-        Debug.Log("fleeFrom Len: " + fleeFrom.Count);
+        // Debug.Log("fleeFrom Len: " + fleeFrom.Count);
         for (int i = 0; i < fleeFrom.Count; i++)
         {
             var (objToFlee, objBody) = fleeFrom[i];
             //check if obj outside of flee range
-            if (Vector3.Distance(objToFlee.transform.position, gameObject.transform.position) > fleeRadius || !objToFlee.activeInHierarchy)
+            if (Vector3.Distance(objToFlee.transform.position, gameObject.transform.position) > (fleeRadius/2 + 1) || !objToFlee.activeInHierarchy)
             {
                 Debug.Log(objToFlee.name + " moved too far");
                 fleeFrom.RemoveAt(i);
