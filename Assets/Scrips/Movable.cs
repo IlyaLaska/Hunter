@@ -51,7 +51,7 @@ public class Movable : MonoBehaviour
             behaviour.PrintLine(desiredVelocity);
             if (desiredVelocity != Vector3.zero) steering += desiredVelocity - velocity;
         }
-        //Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
+        // Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         QueueForce(Vector3.ClampMagnitude(steering - velocity, steeringForceLimit));
     }
     void ApplyQueuedForces()
