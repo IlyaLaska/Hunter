@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class ChaseSmartWolf : AbstractBehaviour
 {
-    //[SerializeField]
-    //private Transform objectToFlee;
-    //private Rigidbody2D objectBody;
     [SerializeField]
     private int chaseDistance;
 
-    //private Hare[] hares;
-    //private Doe[] does;
-    //private Wolf[] wolves;
-    //private GameObject hunter;
     public List<(GameObject, Rigidbody2D)> chaseList;
     private Animal animal;
     private new void Start()
@@ -46,11 +39,11 @@ public class ChaseSmartWolf : AbstractBehaviour
             Vector3 futurePos = objToFlee.transform.position + dist3d;
             if (Vector3.Distance(futurePos, gameObject.transform.position) < chaseDistance)
             {
-                result += (futurePos - transform.position).normalized * movable.VelocityLimit;
+                result += (futurePos - transform.position);
             }
         }
         if (chaseList.Count == 0) animal.safeToWander = true;
-        return result;
+        return result.normalized * movable.VelocityLimit;
     }
     public override void PrintLine(Vector3 desiredVelocity)
     {

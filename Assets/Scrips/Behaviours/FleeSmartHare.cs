@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class FleeSmartHare : AbstractBehaviour
 {
-    //[SerializeField]
-    //private Transform objectToFlee;
-    //private Rigidbody2D objectBody;
     [SerializeField]
     private int fleeDistance;
 
-    //private Hare[] hares;
-    //private Doe[] does;
-    //private Wolf[] wolves;
-    //private GameObject hunter;
     public List<(GameObject, Rigidbody2D)> fleeFrom;
     private Animal animal;
     private new void Start()
@@ -42,7 +35,7 @@ public class FleeSmartHare : AbstractBehaviour
         }
         //Debug.Log("Res: " + result.magnitude);
         if (fleeFrom.Count == 0) animal.safeToWander = true;
-        return result;
+        return result.normalized * movable.VelocityLimit;
     }
     public override void PrintLine(Vector3 desiredVelocity)
     {
