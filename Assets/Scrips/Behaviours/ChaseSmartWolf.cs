@@ -56,12 +56,12 @@ public class ChaseSmartWolf : AbstractBehaviour
             Vector3 futurePos = objToFlee.transform.position + dist3d;
             if (Vector3.Distance(futurePos, gameObject.transform.position) < chaseDistance)
             {
-                result += (futurePos - transform.position).normalized * movable.VelocityLimit;
+                result += (futurePos - transform.position);
                         //result += -(objToFlee.transform.position - transform.position).normalized * movable.VelocityLimit;//From dumb flee
             }
         }
         //Debug.Log("Res: " + result.magnitude);
         if (chaseList.Count == 0) animal.safeToWander = true;
-        return result;
+        return result.normalized * movable.VelocityLimit;
     }
 }

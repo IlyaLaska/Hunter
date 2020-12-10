@@ -57,11 +57,11 @@ public class FleeSmartHare : AbstractBehaviour
             //if (Vector3.Distance(futurePos, gameObject.transform.position) < fleeDistance)
             //{
             //result += -(futurePos - transform.position).normalized * movable.VelocityLimit;
-                                    result += -(objToFlee.transform.position - transform.position).normalized * movable.VelocityLimit;//From dumb flee
+                                    result += -(objToFlee.transform.position - transform.position);//From dumb flee
             //}
         }
         //Debug.Log("Res: " + result.magnitude);
         if (fleeFrom.Count == 0) animal.safeToWander = true;
-        return result;
+        return result.normalized * movable.VelocityLimit;
     }
 }
