@@ -52,4 +52,9 @@ public class Wander : AbstractBehaviour
         //Debug.Log("W:" + (futurePos + vector - transform.position).normalized.magnitude * movable.VelocityLimit);
         return (futurePos + vector - transform.position).normalized * movable.VelocityLimit;
     }
+    public override void PrintLine(Vector3 desiredVelocity)
+    {
+        // Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+        Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.cyan);
+    }
 }

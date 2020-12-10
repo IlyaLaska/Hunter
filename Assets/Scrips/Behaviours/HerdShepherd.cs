@@ -85,6 +85,11 @@ public class HerdShepherd: AbstractBehaviour
         return desired;
     }
     
+    public override void PrintLine(Vector3 desiredVelocity)
+    {
+        //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+        Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.yellow);
+    }
     
 }
 
