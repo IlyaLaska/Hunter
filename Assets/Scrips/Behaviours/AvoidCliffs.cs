@@ -12,12 +12,14 @@ public class AvoidCliffs : AbstractBehaviour
     {
         var maxSpeed = movable.VelocityLimit;
 
+        int signX;
+        int signY;
+        //if((int))
         float rnd = Random.Range(-maxSpeed, maxSpeed);
         if (transform.position.x >= edgeX)
         {
             //Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
             return new Vector3(-maxSpeed, rnd, 0).normalized * maxSpeed;
-
         }
         if (transform.position.x <= -edgeX)
         {
