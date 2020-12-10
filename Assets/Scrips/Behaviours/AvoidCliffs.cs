@@ -23,23 +23,23 @@ public class AvoidCliffs : AbstractBehaviour
         {
             //Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
             //body.velocity = new Vector2(0, body.velocity.y);
-            return new Vector3(-maxSpeed, rnd*signX, 0).normalized * maxSpeed*2;
+            return new Vector3(-maxSpeed, rnd*signX, 0).normalized * maxSpeed*3;
         }
         if (transform.position.x <= -edgeX)
         {
             //Debug.Log("RUN");
             //body.velocity = new Vector2(0, body.velocity.y);
-            return new Vector3(maxSpeed, rnd*signX, 0).normalized * maxSpeed*2;
+            return new Vector3(maxSpeed, rnd*signX, 0).normalized * maxSpeed*3;
         }
         if (transform.position.y >= edgeY)
         {
             //body.velocity = new Vector2(body.velocity.x, 0);
-            return new Vector3(rnd*signY, -maxSpeed, 0).normalized * maxSpeed*2;
+            return new Vector3(rnd*signY, -maxSpeed, 0).normalized * maxSpeed*3;
         }
         if (transform.position.y <= -edgeY)
         {
             //body.velocity = new Vector2(body.velocity.x, 0);
-            return new Vector3(rnd*signY, maxSpeed, 0).normalized * maxSpeed*2;
+            return new Vector3(rnd*signY, maxSpeed, 0).normalized * maxSpeed*3;
         }
 
         return Vector3.zero;

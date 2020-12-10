@@ -26,7 +26,7 @@ public class FleeSmartHare : AbstractBehaviour
         {
             var (objToFlee, objBody) = fleeFrom[i];
             //check if obj outside of flee range
-            if (Vector3.Distance(objToFlee.transform.position, gameObject.transform.position) > fleeRadius || !objToFlee.activeInHierarchy)
+            if ((Vector3.Distance(objToFlee.transform.position, gameObject.transform.position)-1) > (fleeRadius/2) || !objToFlee.activeInHierarchy)
             {
                 Debug.Log(objToFlee.name + " moved too far");
                 fleeFrom.RemoveAt(i);
