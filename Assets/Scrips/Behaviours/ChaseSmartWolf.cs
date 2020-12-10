@@ -43,12 +43,13 @@ public class ChaseSmartWolf : AbstractBehaviour
             //{
             //    result += (futurePos - transform.position);
             //}
-            float futureDist = Vector3.Distance(futurePos, gameObject.transform.position);
-            if (futureDist > distToChaseHim)
-            {
-                distToChaseHim = futureDist;
-                result = (futurePos - transform.position);
-            }
+            //float futureDist = Vector3.Distance(futurePos, gameObject.transform.position);
+            //if (futureDist > distToChaseHim)
+            //{
+            //    distToChaseHim = futureDist;
+            //    result = (futurePos - transform.position);
+            //}
+            if(i==0) result = (futurePos - transform.position);
         }
 
         if (chaseList.Count == 0) animal.safeToWander = true;
