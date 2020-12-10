@@ -17,6 +17,6 @@ public abstract class AbstractBehaviour : MonoBehaviour
         //Debug.Log(gameObject.name + " has movable " + movable.gameObject.name);
     }
     public abstract Vector3 GetDesiredVelocity();
-    // public abstract void PrintLine();
+    public abstract void PrintLine(Vector3 desiredVelocity);
 
 }

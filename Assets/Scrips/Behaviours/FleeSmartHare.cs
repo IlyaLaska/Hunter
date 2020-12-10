@@ -64,4 +64,9 @@ public class FleeSmartHare : AbstractBehaviour
         if (fleeFrom.Count == 0) animal.safeToWander = true;
         return result;
     }
+    public override void PrintLine(Vector3 desiredVelocity)
+    {
+        //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+        Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.green);
+    }
 }

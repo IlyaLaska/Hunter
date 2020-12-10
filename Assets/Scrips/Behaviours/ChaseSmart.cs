@@ -30,4 +30,8 @@ public class ChaseSmart : AbstractBehaviour
         }
         else return Vector3.zero;
     }
+    public override void PrintLine(Vector3 desiredVelocity)
+    {
+        return;
+    }
 }

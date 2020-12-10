@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AvoidCliffs : AbstractBehaviour
 {
+    [SerializeField, Range(15, 40)]
     private float edgeX = 40f;
+    [SerializeField, Range(5, 19)]
     private float edgeY = 19f;
 
     public override Vector3 GetDesiredVelocity()
@@ -33,4 +35,10 @@ public class AvoidCliffs : AbstractBehaviour
 
         return Vector3.zero;
     }
+
+      public override void PrintLine(Vector3 desiredVelocity)
+      {
+            // Debug.Log(GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+            Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.black);
+      }
 }
