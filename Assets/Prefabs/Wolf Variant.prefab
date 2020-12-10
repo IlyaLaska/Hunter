@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3328393430997185817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245125579941825612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253ae8f09be72c24ab14a2f0cdae50a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  chaseDistance: 15
 --- !u!114 &8227505284333188950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  safeToWander: 0
 --- !u!114 &9137533582023362342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,10 +47,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6081527179435652686, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207856948642263475, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: circleDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207856948642263475, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: circleRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207856948642263475, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: angleChangeStep
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6169426356693681455, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605649436439999991, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: velocityLimit
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605649436439999991, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: steeringForceLimit
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7077718855568991032, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
@@ -121,12 +166,13 @@ PrefabInstance:
     - target: {fileID: 8151942082796880644, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 418631809909055830, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
     - {fileID: 6169426356693681455, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
     - {fileID: 1552282360953061303, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
+    - {fileID: 1996762928331565228, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
 --- !u!1 &4245125579941825612 stripped
 GameObject:

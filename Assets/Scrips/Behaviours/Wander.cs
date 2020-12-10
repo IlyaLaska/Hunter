@@ -15,8 +15,24 @@ public class Wander : AbstractBehaviour
 
     private int angle = 0;
 
+    private Animal animal;
+
+    private new void Start()
+    {
+        base.Start();
+        animal = GetComponent<Animal>();
+    }
+
     public override Vector3 GetDesiredVelocity()
     {
+        if (!animal.safeToWander)
+        {
+
+            return Vector3.zero;
+        } else
+        {
+            //Debug.Log("SAFE to WANDER: " + animal.safeToWander);
+        }
         var rnd = Random.value;
         if (rnd < 0.5)
         {

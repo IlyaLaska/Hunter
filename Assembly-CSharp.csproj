@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scrips\Behaviours\AvoidCliffs.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Chase.cs" />
     <Compile Include="Assets\Scrips\Behaviours\ChaseSmart.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\ChaseSmartWolf.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Cohesion.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Flee.cs" />
     <Compile Include="Assets\Scrips\Behaviours\FleeSmart.cs" />

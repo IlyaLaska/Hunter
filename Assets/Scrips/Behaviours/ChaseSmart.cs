@@ -9,7 +9,7 @@ public class ChaseSmart : AbstractBehaviour
     private Rigidbody2D objectBody;
     [SerializeField]
     private int chaseDistance;
-    private void Start()
+    private new void Start()
     {
         base.Start();
         objectBody = objectToChase.GetComponent<Rigidbody2D>();

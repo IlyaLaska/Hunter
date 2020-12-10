@@ -21,6 +21,7 @@ public class Cliff : MonoBehaviour
         if(tag == "CanFallOffCliff")
         {
             collision.gameObject.SetActive(false);
+            //Destroy(collision.gameObject);
             Debug.Log(collision.name + " has fallen off a cliff");
         }
         

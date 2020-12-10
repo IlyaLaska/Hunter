@@ -12,7 +12,7 @@ public class Movable : MonoBehaviour
     [SerializeField, Range(1, 20)]
     private float velocityLimit = 3;
 
-    [SerializeField, Range(1, 50)]
+    [SerializeField, Range(1, 500)]
     private float steeringForceLimit = 5;
 
     private const float Epsilon = 0.05f;
@@ -44,25 +44,25 @@ public class Movable : MonoBehaviour
         //Steering vector that shows how much you have to deviate from velocity to get DesiredVelocity
         Vector3 steering = Vector3.zero;
         //Debug.Log("----------------------");
-        Debug.Log("BEh len: " + behaviours.Length);
+        //Debug.Log("BEh len: " + behaviours.Length);
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;
 
             if (behaviour.GetType().ToString() == "AvoidCliffs") { 
-                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
                 Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.black);
             }
             if (behaviour.GetType().ToString() == "Wander") {
-                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
                 Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.cyan);
             }
             if (behaviour.GetType().ToString() == "ChaseSmart") {
-                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
                 Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.green);
             }
             if (behaviour.GetType().ToString() == "Chase") {
-                Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
+                //Debug.Log(behaviour.GetType() + " V: " + desiredVelocity + " has DVM " + desiredVelocity.magnitude);
                 Debug.DrawLine(transform.position, transform.position + desiredVelocity, Color.red);
             }
 
@@ -75,14 +75,14 @@ public class Movable : MonoBehaviour
         //Debug.Log("Steering:" + (steering.normalized * steeringForceLimit).magnitude);
         //Debug.Log("Not: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         //Debug.Log("FinalVel: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " Mag: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
-        Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
+        //Debug.Log("Steer: " + " V: " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit) + " has DVM " + Vector3.ClampMagnitude(steering - velocity, steeringForceLimit).magnitude);
         QueueForce(Vector3.ClampMagnitude(steering - velocity, steeringForceLimit));
     }
     void ApplyQueuedForces()
     {
         velocity += acceleration * Time.fixedDeltaTime;
         velocity = Vector3.ClampMagnitude(velocity, velocityLimit);
-        Debug.Log("Velocity To Add: " + "V: " + velocity + "VM: " + velocity.magnitude);
+        //Debug.Log("Velocity To Add: " + "V: " + velocity + "VM: " + velocity.magnitude);
         //on small values object might start to blink, so we considering 
         //small velocities as zeroes
         if (velocity.magnitude < Epsilon)

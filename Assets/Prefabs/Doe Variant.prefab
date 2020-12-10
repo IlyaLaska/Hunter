@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
-  align: {fileID: 0}
-  separation: {fileID: 0}
-  cohesion: {fileID: 0}
 --- !u!114 &6638935057073523938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +125,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 418631809909055830, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
     - {fileID: 1552282360953061303, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
+    - {fileID: 1996762928331565228, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
 --- !u!1 &7772857962988161598 stripped
 GameObject:

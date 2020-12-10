@@ -17,10 +17,12 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.name == "FOV") return;
         string tag = collision.tag;
         if (tag == "CanFallOffCliff")
         {
             collision.gameObject.SetActive(false);
+            //Destroy(collision.gameObject);
             Debug.Log(collision.name + " has been shot");
         }
         //Debug.Log($"Bullet hit");

@@ -77,18 +77,32 @@ public class GM : MonoBehaviour
             {
                 var xPos = UnityEngine.Random.Range(-2, 2);
                 var yPos = UnityEngine.Random.Range(-2, 2);
-                GameObject obj = Instantiate(doe, new Vector3(xCentrePos+xPos, yCentrePos+yPos, 0), new Quaternion());
+                GameObject obj = Instantiate(doe, new Vector3(xCentrePos + xPos, yCentrePos + yPos, 0), new Quaternion());
                 obj.name = "Doe";
                 obj.GetComponent<Doe>().id = j;
                 obj.GetComponent<Doe>().groupId = i;
                 doeList[i].Add(obj);
             }
         }
-        Debug.Log("Setting doeList");
     }
 
     void Awake()
     {
+        //var a = new List<int>();
+        //a.Add(1);
+        //a.Add(2);
+        //a.Add(3);
+        //for (int i = 0; i < a.Count; i++)
+        //{
+        //    if (a[i] == 1)
+        //    {
+        //        a.RemoveAt(i);
+        //        i--;
+        //        continue;
+        //    }
+        //    Debug.Log("I: " + i + "VAl: " + a[i]);
+        //}
+
         bulletPoolInstance = bulletPool;
         if (instance == null)
         {
