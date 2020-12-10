@@ -3,6 +3,7 @@ Library/
 Logs/
 Temp/
 Build/
+obj/
 
 ### vs ###
 .vs
