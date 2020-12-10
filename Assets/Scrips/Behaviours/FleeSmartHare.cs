@@ -19,21 +19,12 @@ public class FleeSmartHare : AbstractBehaviour
     private new void Start()
     {
         base.Start();
-        //objectBody = objectToFlee.GetComponent<Rigidbody2D>();
         fleeFrom = new List<(GameObject, Rigidbody2D)>();
         animal = GetComponent<Animal>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hunter = GM.instance.Hunter;
     }
 
     public override Vector3 GetDesiredVelocity()
     {
-        //foreach (var (objToFlee, objBody) in fleeFrom)
-        //{
-
-        //}
         var result = Vector3.zero;
         //Debug.Log("fleeFrom Len: " + fleeFrom.Count);
         for (int i = 0; i < fleeFrom.Count; i++)
@@ -47,18 +38,7 @@ public class FleeSmartHare : AbstractBehaviour
                 i--;
                 continue;
             }
-            //float distance = Vector3.Distance(objToFlee.transform.position, gameObject.transform.position);
-            //float timeToCatch = distance / movable.VelocityLimit;
-
-            //Vector2 dist = objBody.velocity * timeToCatch;
-            //Vector3 dist3d = new Vector3(dist.x, dist.y, 0);
-
-            //Vector3 futurePos = objToFlee.transform.position + dist3d;
-            //if (Vector3.Distance(futurePos, gameObject.transform.position) < fleeDistance)
-            //{
-            //result += -(futurePos - transform.position).normalized * movable.VelocityLimit;
-                                    result += -(objToFlee.transform.position - transform.position).normalized * movable.VelocityLimit;//From dumb flee
-            //}
+            result += -(objToFlee.transform.position - transform.position).normalized * movable.VelocityLimit;//From dumb flee
         }
         //Debug.Log("Res: " + result.magnitude);
         if (fleeFrom.Count == 0) animal.safeToWander = true;

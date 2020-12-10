@@ -19,23 +19,13 @@ public class ChaseSmartWolf : AbstractBehaviour
     private new void Start()
     {
         base.Start();
-        //objectBody = objectToFlee.GetComponent<Rigidbody2D>();
         chaseList = new List<(GameObject, Rigidbody2D)>();
         animal = GetComponent<Animal>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hares = Resources.FindObjectsOfTypeAll<Hare>();
-        //hunter = GM.instance.Hunter;
     }
 
     public override Vector3 GetDesiredVelocity()
     {
-        //foreach (var (objToFlee, objBody) in fleeFrom)
-        //{
-
-        //}
         var result = Vector3.zero;
-        //Debug.Log("fleeFrom Len: " + fleeFrom.Count);
         for (int i = 0; i < chaseList.Count; i++)
         {
             var (objToFlee, objBody) = chaseList[i];
@@ -57,10 +47,8 @@ public class ChaseSmartWolf : AbstractBehaviour
             if (Vector3.Distance(futurePos, gameObject.transform.position) < chaseDistance)
             {
                 result += (futurePos - transform.position).normalized * movable.VelocityLimit;
-                        //result += -(objToFlee.transform.position - transform.position).normalized * movable.VelocityLimit;//From dumb flee
             }
         }
-        //Debug.Log("Res: " + result.magnitude);
         if (chaseList.Count == 0) animal.safeToWander = true;
         return result;
     }
