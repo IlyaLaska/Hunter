@@ -19,6 +19,8 @@ public class ChaseSmartWolf : AbstractBehaviour
     public override Vector3 GetDesiredVelocity()
     {
         var result = Vector3.zero;
+        //GameObject chaseHim;
+        float distToChaseHim = 0;
         for (int i = 0; i < chaseList.Count; i++)
         {
             var (objToFlee, objBody) = chaseList[i];
@@ -37,11 +39,18 @@ public class ChaseSmartWolf : AbstractBehaviour
             Vector3 dist3d = new Vector3(dist.x, dist.y, 0);
 
             Vector3 futurePos = objToFlee.transform.position + dist3d;
-            if (Vector3.Distance(futurePos, gameObject.transform.position) < chaseDistance)
+            //if (Vector3.Distance(futurePos, gameObject.transform.position) < chaseDistance)
+            //{
+            //    result += (futurePos - transform.position);
+            //}
+            float futureDist = Vector3.Distance(futurePos, gameObject.transform.position);
+            if (futureDist > distToChaseHim)
             {
-                result += (futurePos - transform.position);
+                distToChaseHim = futureDist;
+                result = (futurePos - transform.position);
             }
         }
+
         if (chaseList.Count == 0) animal.safeToWander = true;
         return result.normalized * movable.VelocityLimit;
     }
