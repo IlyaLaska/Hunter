@@ -807,8 +807,8 @@ MonoBehaviour:
   hare: {fileID: 7077718855568991038, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
   wolf: {fileID: 4245125579941825612, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
   doe: {fileID: 7772857962988161598, guid: caa533ba2fc86a74092c5a23f2e60af7, type: 3}
-  hareAmount: 1
-  wolfAmount: 4
+  hareAmount: 20
+  wolfAmount: 1
   doeGroupAmount: 0
   doeInGroupMinAmount: 3
   doeInGroupMaxAmount: 7
