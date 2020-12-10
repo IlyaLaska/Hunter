@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cohesion : AbstractBehaviour
+public class FOVHare : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,9 +15,12 @@ public class Cohesion : AbstractBehaviour
     {
         
     }
-    public override Vector3 GetDesiredVelocity()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        return new Vector3(0, 0, 0);
-        Vector3 sum = new Vector3(0, 0, 0);
+        string hisName = collision.name;
+        if(hisName == "Hunter" || hisName == "Hare" || hisName == "Wolf" || hisName == "Doe")
+        {
+
+        }
     }
 }

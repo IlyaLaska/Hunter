@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class Animal : MonoBehaviour
 {
     public int id;
-    public Animal(int id)
-    {
-        this.id = id;
-    }
+    //public Animal(int id)
+    //{
+    //    this.id = id;
+    //}
 }

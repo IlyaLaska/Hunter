@@ -44,6 +44,7 @@ public class Movable : MonoBehaviour
         //Steering vector that shows how much you have to deviate from velocity to get DesiredVelocity
         Vector3 steering = Vector3.zero;
         //Debug.Log("----------------------");
+        Debug.Log("BEh len: " + behaviours.Length);
         foreach (AbstractBehaviour behaviour in behaviours)
         {
             Vector3 desiredVelocity = behaviour.GetDesiredVelocity() * behaviour.Weight;

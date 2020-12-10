@@ -20,6 +20,7 @@ public class GM : MonoBehaviour
     public ObjectPool bulletPool;
     public static ObjectPool bulletPoolInstance;
 
+    public GameObject Hunter;
     //animals
     public GameObject hare;
     public GameObject wolf;
@@ -53,6 +54,8 @@ public class GM : MonoBehaviour
             var xPos = UnityEngine.Random.Range(-xSize, xSize);
             var yPos = UnityEngine.Random.Range(-ySize, ySize);
             GameObject obj = Instantiate(hare, new Vector3(xPos, yPos, 0), new Quaternion());
+            obj.name = "Hare";
+            obj.GetComponent<Hare>().id = i;
             hareList.Add(obj);
         }
         for (int i = 0; i < wolfAmount; i++)
@@ -60,6 +63,8 @@ public class GM : MonoBehaviour
             var xPos = UnityEngine.Random.Range(-xSize, xSize);
             var yPos = UnityEngine.Random.Range(-ySize, ySize);
             GameObject obj = Instantiate(wolf, new Vector3(xPos, yPos, 0), new Quaternion());
+            obj.name = "Wolf";
+            obj.GetComponent<Wolf>().id = i;
             wolfList.Add(obj);
         }
         for (int i = 0; i < doeGroupAmount; i++)
@@ -73,9 +78,13 @@ public class GM : MonoBehaviour
                 var xPos = UnityEngine.Random.Range(-2, 2);
                 var yPos = UnityEngine.Random.Range(-2, 2);
                 GameObject obj = Instantiate(doe, new Vector3(xCentrePos+xPos, yCentrePos+yPos, 0), new Quaternion());
+                obj.name = "Doe";
+                obj.GetComponent<Doe>().id = j;
+                obj.GetComponent<Doe>().groupId = i;
                 doeList[i].Add(obj);
             }
         }
+        Debug.Log("Setting doeList");
     }
 
     void Awake()

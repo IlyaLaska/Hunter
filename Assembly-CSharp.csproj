@@ -76,11 +76,15 @@
     <Compile Include="Assets\Scrips\Behaviours\Cohesion.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Flee.cs" />
     <Compile Include="Assets\Scrips\Behaviours\FleeSmart.cs" />
+    <Compile Include="Assets\Scrips\Behaviours\FleeSmartHare.cs" />
     <Compile Include="Assets\Scrips\Behaviours\HerdShepherd.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Separation.cs" />
     <Compile Include="Assets\Scrips\Behaviours\Wander.cs" />
     <Compile Include="Assets\Scrips\Bullet.cs" />
     <Compile Include="Assets\Scrips\Cliff.cs" />
+    <Compile Include="Assets\Scrips\FOVs\FOVDoe.cs" />
+    <Compile Include="Assets\Scrips\FOVs\FOVHare.cs" />
+    <Compile Include="Assets\Scrips\FOVs\FOVWolf.cs" />
     <Compile Include="Assets\Scrips\GM.cs" />
     <Compile Include="Assets\Scrips\Movable.cs" />
     <Compile Include="Assets\Scrips\ObjectPool.cs" />

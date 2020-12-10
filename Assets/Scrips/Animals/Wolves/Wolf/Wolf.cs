@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wolf : Animal
 {
-    public Wolf(int id) : base(id) { }
+    //public Wolf(int id) : base(id) { }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string me = gameObject.name;
