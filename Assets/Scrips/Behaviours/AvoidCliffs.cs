@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+
 public class AvoidCliffs : AbstractBehaviour
 {
     [SerializeField, Range(15, 40)]
@@ -12,6 +14,7 @@ public class AvoidCliffs : AbstractBehaviour
     {
         var maxSpeed = movable.VelocityLimit;
         var body = GetComponent<Rigidbody2D>();
+        bool safeToWander = GetComponent<Animal>().safeToWander;
         int signX;
         int signY;
         if ((int)transform.position.x % 2 != 0) signX = 1;
@@ -21,23 +24,50 @@ public class AvoidCliffs : AbstractBehaviour
         float rnd = Random.Range(maxSpeed/2, maxSpeed);
         if (transform.position.x >= edgeX)
         {
-            //Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
+            if(safeToWander) {
+                if(transform.position.y <= -16) return new Vector3(-maxSpeed, rnd, 0) * maxSpeed;  
+                else if(transform.position.y >= 16)return new Vector3(-maxSpeed, -rnd, 0) * maxSpeed;
+            } 
+            // Debug.Log("RUN: " + new Vector3(-maxSpeed, 0, 0));
             //body.velocity = new Vector2(0, body.velocity.y);
-            return new Vector3(-maxSpeed, rnd*signX, 0).normalized * maxSpeed*3;
+            return new Vector3(-maxSpeed, rnd*signX, 0).normalized * maxSpeed;
         }
         if (transform.position.x <= -edgeX)
         {
+            if(safeToWander) {
+                if(transform.position.y <= -16) {
+                    Debug.Log($"T.p.x: {transform.position.x} T.p.y: {transform.position.y}");
+                    return new Vector3(maxSpeed, rnd, 0) * maxSpeed;
+                }
+                else if(transform.position.y >= 16) {
+                    return new Vector3(maxSpeed, -rnd, 0) * maxSpeed;
+                }
+            }
             //Debug.Log("RUN");
             //body.velocity = new Vector2(0, body.velocity.y);
             return new Vector3(maxSpeed, rnd*signX, 0).normalized * maxSpeed*3;
         }
         if (transform.position.y >= edgeY)
         {
+            if(safeToWander) {
+                if(transform.position.x <= -35) {
+                    return new Vector3(rnd, -maxSpeed, 0) * maxSpeed;
+                }
+                else if(transform.position.x >= 35) return new Vector3(-rnd, -maxSpeed, 0) * maxSpeed;
+            }
             //body.velocity = new Vector2(body.velocity.x, 0);
             return new Vector3(rnd*signY, -maxSpeed, 0).normalized * maxSpeed*3;
         }
         if (transform.position.y <= -edgeY)
         {
+            if(safeToWander) {
+                if(transform.position.x <= -35) {
+                    return new Vector3(rnd, -maxSpeed, 0) * maxSpeed;
+                }
+                else if(transform.position.x >= 35) {
+                    return new Vector3(-rnd, -maxSpeed, 0) * maxSpeed;
+                }
+            }
             //body.velocity = new Vector2(body.velocity.x, 0);
             return new Vector3(rnd*signY, maxSpeed, 0).normalized * maxSpeed*3;
         }
