@@ -2,6 +2,7 @@
 Library/
 Logs/
 Temp/
+Build/
 
 ### vs ###
 .vs
