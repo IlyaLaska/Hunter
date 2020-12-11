@@ -27,6 +27,7 @@ public class Wolf : Animal
             Debug.Log(me + " has eaten " + him);
             //lastAte = System.DateTime.Now.Second;
             StopCoroutine(die);
+            die = DieFromHunger(40);
             StartCoroutine(die);
             collision.gameObject.SetActive(false);
         }

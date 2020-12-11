@@ -27,7 +27,7 @@ public class FOVHare : MonoBehaviour
             animal.safeToWander = false;
             animal.runningFromPredator = true;
             flee.fleeFrom.Add((collision.gameObject, collision.gameObject.GetComponent<Rigidbody2D>()));
-            Debug.Log(flee.name + " now fleeing from " + hisName);
+            //Debug.Log(flee.name + " now fleeing from " + hisName);
         }
     }
 }
