@@ -4,7 +4,8 @@ Logs/
 Temp/
 Build/
 obj/
-
+MonoBleedingEdge/
+SuicidalHunting_Data/
 ### vs ###
 .vs
 *.csproj

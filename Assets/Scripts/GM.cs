@@ -128,7 +128,8 @@ public class GM : MonoBehaviour
     }
     internal void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
+        //SceneManager.LoadScene("MainMenu");
     }
     private void OnGUI()
     {
