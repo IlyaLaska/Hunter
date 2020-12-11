@@ -2,12 +2,15 @@
 Library/
 Logs/
 Temp/
-
+Build/
+obj/
+MonoBleedingEdge/
+SuicidalHunting_Data/
 ### vs ###
 .vs
+*.csproj
 ### vscode ###
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
