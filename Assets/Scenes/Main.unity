@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
@@ -700,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
@@ -769,7 +769,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1436550842
 MonoBehaviour:
@@ -807,9 +807,9 @@ MonoBehaviour:
   hare: {fileID: 7077718855568991038, guid: c94bbbf14bf2fcb4fb188bc5608cdbba, type: 3}
   wolf: {fileID: 4245125579941825612, guid: e7638a2ea52d4ad4f962baf54623823f, type: 3}
   doe: {fileID: 7772857962988161598, guid: caa533ba2fc86a74092c5a23f2e60af7, type: 3}
-  hareAmount: 20
-  wolfAmount: 1
-  doeGroupAmount: 0
+  hareAmount: 4
+  wolfAmount: 4
+  doeGroupAmount: 2
   doeInGroupMinAmount: 3
   doeInGroupMaxAmount: 7
   hareList: []
@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8235872258079269753, guid: 897150b3fd3bba540b18ac5c122d6373,
         type: 3}
