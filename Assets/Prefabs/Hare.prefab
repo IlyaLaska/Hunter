@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   safeToWander: 0
+  runningFromPredator: 0
 --- !u!114 &5207856948642263475
 MonoBehaviour:
   m_ObjectHideFlags: 0

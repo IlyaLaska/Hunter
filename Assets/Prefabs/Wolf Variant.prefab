@@ -28,6 +28,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   safeToWander: 0
+  runningFromPredator: 0
 --- !u!114 &9137533582023362342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +82,11 @@ PrefabInstance:
         type: 3}
       propertyPath: angleChangeStep
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207856948642263475, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
+        type: 3}
+      propertyPath: weight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6169426356693681455, guid: c94bbbf14bf2fcb4fb188bc5608cdbba,
         type: 3}
