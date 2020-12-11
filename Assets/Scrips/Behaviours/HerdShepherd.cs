@@ -24,6 +24,7 @@ public class HerdShepherd: AbstractBehaviour
 
     public override Vector3 GetDesiredVelocity()
     {
+        if(!doe.safeToWander) return Vector3.zero;
         int aliveInGroup = 0;
         foreach (var doe in groupList)
         {
