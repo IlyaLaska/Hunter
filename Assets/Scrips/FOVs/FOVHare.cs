@@ -21,11 +21,13 @@ public class FOVHare : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string hisName = collision.name;
+        if(hisName == "Hare" || hisName == "Doe") animal.runningFromPredator = false;
         if(hisName == "Hunter" || hisName == "Hare" || hisName == "Wolf" || hisName == "Doe")
         {
             animal.safeToWander = false;
+            animal.runningFromPredator = true;
             flee.fleeFrom.Add((collision.gameObject, collision.gameObject.GetComponent<Rigidbody2D>()));
-            //Debug.Log(flee.name + " now fleeing from " + hisName);
+            Debug.Log(flee.name + " now fleeing from " + hisName);
         }
     }
 }

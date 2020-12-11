@@ -27,7 +27,7 @@ public class ChaseSmartWolf : AbstractBehaviour
         {
             var (objToFlee, objBody) = chaseList[i];
             //check if obj outside of flee range
-            if (Vector3.Distance(objToFlee.transform.position, gameObject.transform.position) > (chaseRadius/2 + 1) || !objToFlee.activeInHierarchy)
+            if (Vector3.Distance(objToFlee.transform.position, gameObject.transform.position) > (chaseRadius/2 + 1.1f) || !objToFlee.activeInHierarchy)
             {
                 //Debug.Log(objToFlee.name + " moved too far");
                 chaseList.RemoveAt(i);
